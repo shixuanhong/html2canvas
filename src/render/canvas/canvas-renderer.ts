@@ -456,13 +456,13 @@ export class CanvasRenderer extends Renderer {
                     container.bounds.left,
                     container.bounds.top + getAbsoluteValue(container.styles.paddingTop, container.bounds.width),
                     container.bounds.width,
-                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2 + 1
+                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2
                 );
 
                 this.renderTextWithLetterSpacing(
                     new TextBounds(paint.listValue, bounds),
                     styles.letterSpacing,
-                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2 + 2
+                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2
                 );
                 this.ctx.textBaseline = 'bottom';
                 this.ctx.textAlign = 'left';
