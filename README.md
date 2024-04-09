@@ -1,5 +1,13 @@
-html2canvas
-===========
+# html2canvas-plus
+
+Fix my personal problems encountered in use, please be careful to use in production environment.
+
+Finally, hopefully the original author will be active on github again.
+
+#### Changelog
+
+##### 1.4.2
+Fixed the offset in the vertical direction of the text.
 
 [Homepage](https://html2canvas.hertzen.com) | [Downloads](https://github.com/niklasvh/html2canvas/releases) | [Questions](https://github.com/niklasvh/html2canvas/discussions/categories/q-a)
 
