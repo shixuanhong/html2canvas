@@ -218,5 +218,23 @@ export const FEATURES = {
         const value = !!(typeof Intl !== 'undefined' && (Intl as any).Segmenter);
         Object.defineProperty(FEATURES, 'SUPPORT_NATIVE_TEXT_SEGMENTATION', {value});
         return value;
+    },
+    get SUPPORT_FONT_FACE_SET(): boolean {
+        'use strict';
+        const value = 'fonts' in document;
+        Object.defineProperty(FEATURES, 'SUPPORT_FONT_FACE_SET', {value});
+        return value;
+    },
+    get SUPPORT_FONT_FACE_SET_CHECK(): boolean {
+        'use strict';
+        const value = FEATURES.SUPPORT_FONT_FACE_SET && 'check' in document.fonts;
+        Object.defineProperty(FEATURES, 'SUPPORT_FONT_FACE_SET_CHECK', {value});
+        return value;
+    },
+    get SUPPORT_FONT_FACE_SET_LOAD(): boolean {
+        'use strict';
+        const value = FEATURES.SUPPORT_FONT_FACE_SET && 'load' in document.fonts;
+        Object.defineProperty(FEATURES, 'SUPPORT_FONT_FACE_SET_LOAD', {value});
+        return value;
     }
 };

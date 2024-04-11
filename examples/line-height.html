@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+    <head>
+        <title>display/box/float/clear test</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=ZCOOL+KuaiLe&display=swap"
+            rel="stylesheet"
+        />
+        <style type="text/css">
+            body {
+                position: relative;
+                margin: 0;
+            }
+            .container {
+                line-height: 28px;
+                height: 28px;
+                border: 1px solid #333;
+                padding: 6px;
+            }
+            .icon {
+                display: inline-block;
+                height: 14px;
+                width: 14px;
+                background: red;
+            }
+            .label {
+                display: inline-block;
+                width: 60px;
+                font-size: 14px;
+                line-height: 1;
+                font-weight: 400;
+                font-family: 'Noto Sans SC', sans-serif;
+            }
+            .value {
+                display: inline-block;
+                width: 100px;
+                text-align: right;
+                font-size: 18px;
+                line-height: 1;
+                font-weight: 700;
+                font-family: 'ZCOOL KuaiLe', sans-serif;
+            }
+            .container2 {
+                margin-top: 20px;
+                display: flex;
+                height: 30px;
+                border: 1px solid #333;
+                padding: 6px;
+                align-items: center;
+            }
+            .container3 {
+                margin-top: 20px;
+                display: flex;
+                height: 30px;
+                border: 1px solid #333;
+                padding: 6px;
+                align-items: center;
+            }
+            .baseline1 {
+                font-size: 14px;
+                font-weight: 400;
+                font-family: 'Noto Sans SC', sans-serif;
+            }
+            .baseline-dot {
+                display: inline-block;
+                height: 1px;
+                width: 1px;
+                background: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="position: absolute; z-index: 2">
+            <div class="container">
+                <div class="icon"></div>
+                <div class="label" id="label1">中文</div>
+                <div class="value">50%</div>
+            </div>
+            <div class="container">
+                <div class="icon"></div>
+                <div class="label" id="label1">中文</div>
+                <div class="value">50%</div>
+            </div>
+            <div class="container">
+                <div class="icon"></div>
+                <div class="label" id="label1">中文</div>
+                <div class="value">50%</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../dist/html2canvas.js"></script>
+        <script type="text/javascript">
+            html2canvas(document.body, {
+                scale: 4
+            }).then(function (canvas) {
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.top = 'left';
+                canvas.style.zIndex = '1';
+                document.body.appendChild(canvas);
+            });
+        </script>
+    </body>
+</html>

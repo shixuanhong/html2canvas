@@ -181,7 +181,7 @@ export class CanvasRenderer extends Renderer {
         this.ctx.direction = styles.direction === DIRECTION.RTL ? 'rtl' : 'ltr';
         this.ctx.textAlign = 'left';
         this.ctx.textBaseline = 'alphabetic';
-        const {baseline, middle} = this.fontMetrics.getMetrics(fontFamily, fontSize);
+        const {baseline, middle} = await this.fontMetrics.getMetrics(fontFamily, fontSize);
         const paintOrder = styles.paintOrder;
 
         text.textBounds.forEach((text) => {
@@ -389,7 +389,7 @@ export class CanvasRenderer extends Renderer {
 
         if (isTextInputElement(container) && container.value.length) {
             const [fontFamily, fontSize] = this.createFontStyle(styles);
-            const {baseline} = this.fontMetrics.getMetrics(fontFamily, fontSize);
+            const {baseline} = await this.fontMetrics.getMetrics(fontFamily, fontSize);
 
             this.ctx.font = fontFamily;
             this.ctx.fillStyle = asString(styles.color);
@@ -456,13 +456,13 @@ export class CanvasRenderer extends Renderer {
                     container.bounds.left,
                     container.bounds.top + getAbsoluteValue(container.styles.paddingTop, container.bounds.width),
                     container.bounds.width,
-                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2
+                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2 + 1
                 );
 
                 this.renderTextWithLetterSpacing(
                     new TextBounds(paint.listValue, bounds),
                     styles.letterSpacing,
-                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2
+                    computeLineHeight(styles.lineHeight, styles.fontSize.number) / 2 + 2
                 );
                 this.ctx.textBaseline = 'bottom';
                 this.ctx.textAlign = 'left';
