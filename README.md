@@ -6,8 +6,8 @@ Finally, hopefully the original author will be active on github again.
 
 #### Changelog
 
-##### 1.4.2
-Fixed the offset in the vertical direction of the text.
+##### 1.4.3
+Fixed baseline calculation error in some cases when fonts were not loaded. This issue may cause the font to be offset vertically.
 
 [Homepage](https://html2canvas.hertzen.com) | [Downloads](https://github.com/niklasvh/html2canvas/releases) | [Questions](https://github.com/niklasvh/html2canvas/discussions/categories/q-a)
 

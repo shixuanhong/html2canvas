@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.3](https://github.com/shixuanhong/html2canvas/compare/v1.4.2...v1.4.3) (2024-04-12)
+
+### fix
+
+* Fixed baseline calculation error in some cases when fonts were not loaded. This issue may cause the font to be offset vertically.
+
+## [1.4.2 [deprecated]](https://github.com/shixuanhong/html2canvas/compare/v1.4.1...v1.4.2) (2024-04-10)
+
+### fix
+
+* Fixed the offset in the vertical direction of the text.
+
 ## [1.4.1](https://github.com/niklasvh/html2canvas/compare/v1.4.0...v1.4.1) (2022-01-22)
 
 
